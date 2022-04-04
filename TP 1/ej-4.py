@@ -11,30 +11,22 @@ def contiene_s(cadena):
         print(f'"{cadena}" empieza con numero.')
 
 
-        if re.search(patron, cadena[0]):
-            print(f'La cadena "{cadena}" contiene en su inicio el numero: "{patron}"')
+        if re.search(patron, cadena):
+            print(f'La cadena "{cadena}" contiene el numero: "{patron}"')
         else:
-            print(f'La cadena "{cadena}" no contiene en su inicio el numero: "{patron}"')
+            print(f'La cadena "{cadena}" no contiene el numero: "{patron}"')
 
 
     elif re.search(patron_1, cadena[0]):
         print(f'"{cadena}" empieza con una letra del patron: "{patron_1}"')
         
 
-        if re.search(patron_2, cadena[0]):
-            print(f'La cadena "{cadena}" contiene la letra: "{patron_2}" en su inicio.')
+        if re.search(patron_2, cadena):
+            print(f'La cadena "{cadena}" contiene la letra: "{patron_2}"')
         else:
-            print(f'La cadena "{cadena}" no contiene la letra: "{patron_2}" en su inicio.')
+            print(f'La cadena "{cadena}" no contiene la letra: "{patron_2}"')
 
 
-cadena_1 = '7juan123'
-cadena_2 = 'Nico1'
-cadena_3 = 'sA#nptiago'
-cadena_4 = '8alexis'
-cadena_5 = 'pedro'
+cadena_1 = input('Ingrese cadena: ')
 
 contiene_s(cadena_1)
-contiene_s(cadena_2)
-contiene_s(cadena_3)
-contiene_s(cadena_4)
-contiene_s(cadena_5)
