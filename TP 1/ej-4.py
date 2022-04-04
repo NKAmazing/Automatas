@@ -11,7 +11,7 @@ def contiene_s(cadena):
         print(f'"{cadena}" empieza con numero.')
 
 
-        if re.search(patron, cadena[0]):
+        if re.search(patron, cadena):
             print(f'La cadena "{cadena}" contiene en su inicio el numero: "{patron}"')
         else:
             print(f'La cadena "{cadena}" no contiene en su inicio el numero: "{patron}"')
@@ -21,7 +21,7 @@ def contiene_s(cadena):
         print(f'"{cadena}" empieza con una letra del patron: "{patron_1}"')
         
 
-        if re.search(patron_2, cadena[0]):
+        if re.search(patron_2, cadena):
             print(f'La cadena "{cadena}" contiene la letra: "{patron_2}" en su inicio.')
         else:
             print(f'La cadena "{cadena}" no contiene la letra: "{patron_2}" en su inicio.')
