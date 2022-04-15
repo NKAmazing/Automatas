@@ -1,34 +1,43 @@
+import time
 
+def main():
+    input_1 = input(str("Ingrese cadena: "))
+    list_1 = list(input_1)
+    global state
+    state = 0
+    state_transition(list_1)
 
-next = "Siguiente estado..."
-end_msg = "Estado final alcanzado"
-error_msg = "Estado incorrecto"
-input_msg = "Ingrese entrada: "
-input_msg_2 = "Ingrese caracter: "
+def state_transition(list_1):
+    print("Iniciando automata...")
+    for i in range(len(list_1)):
+        if list_1[i] == 'a':
+            transition_a()
+        elif list_1[i] == 'b':
+            
+            transition_b()
+        elif list_1[i] == "":
+            end_process()
+        else:
+            print("ERROR: Cadena incorrecta")
+    end_process()
+            
+def transition_a():
+    state = 1
+    print("ESTADO: ", state)
+    state = 2
+    print("ESTADO: ", state)
+    time.sleep(1)
 
-def main(entrada):
-    lista = list(entrada)
-    print('Estado 1:', lista[0])
-    print(next)
-    print('Estado 1:', lista[1])
-    print(next)
-    print('Estado 1:', lista[2])
-    print(next)
-    print('Estado 1:', lista[3])
+def transition_b():
+    state = 3
+    print("ESTADO: ", state)
+    state = 4
+    print("ESTADO: ", state)
+    time.sleep(1)
 
-# def automata(entrada):
-    #lista = list(entrada)
-    #for i in range(len(lista[0])):
-     #   caracter = input(input_msg_2)
-      #  if lista[i] ==  caracter:
-       #     print(next)
-        #    i += 1
-       # else:
-        #    print(error_msg)
-   # if i == len(lista[-1]):
-    #    print(end_msg)
+def end_process():
+    state = 5
+    print("ESTADO: ", state)
+    print("Estado de aceptacion alcanzado")
 
-# entrada = input(input_msg)
-if __name__ == '__main__':
-    entrada = input(input_msg)
-    main(entrada)
+main()
