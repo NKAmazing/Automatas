@@ -27,12 +27,14 @@ def transition_process(string):
                 print("ESTADO: ", state)
                 time.sleep(1)
                 state = 6
+                print("ESTADO: ", state)
             elif transition == 'E':
                 state = 6
                 print("ESTADO: ", state)
                 print("Estado de aceptacion alcanzado")
             else:
                 print("ERROR")
+
         if state == 2:
             if transition == 'a':
                 state = 3
@@ -40,12 +42,22 @@ def transition_process(string):
                 time.sleep(1)
                 state = 6
                 print("ESTADO: ", state)
+                continue
             else:
                 print("ERROR en la cadena")
+                return
         if state == 6:
-            next = string[i + 1]
+            try:
+                next = string[i + 1]
+            except:
+                next = 0
+
             if transition == 'a':
                 if next == 'a':
+                    state = 0
+                    print("ESTADO: ", state)
+                    time.sleep(1)
+                else:
                     state = 7
                     print("ESTADO: ", state)
                     state = 8
@@ -54,10 +66,7 @@ def transition_process(string):
                     state = 12
                     print("ESTADO: ", state)
                     time.sleep(1)
-                else:
-                    state = 0
-                    print("ESTADO: ", state)
-                    time.sleep(1)
+
             if transition == 'b':
                 if next == 'b':
                     state = 9
@@ -65,15 +74,22 @@ def transition_process(string):
                     state = 10
                     print("ESTADO: ", state)
                     time.sleep(1)
-                    continue
+                    continue  
                 else:
                     state = 0
                     print("ESTADO: ", state)
-                    
-            if i == (len(string) - 1):
-                print("Estado de aceptacion alcanzado")
+                    state = 4
+                    print("ESTADO: ", state)
+                    state = 5
+                    print("ESTADO: ", state)
+                    state = 6
+                    print("ESTADO: ", state)
+                    time.sleep(1)
+                    state = 12
+                    print("ESTADO: ", state)
+                    time.sleep(1)
+
         if state == 10:
-            print("ESTADO: ", state)
             if transition == 'b':
                 state = 11
                 print("ESTADO: ", state)
@@ -89,8 +105,6 @@ def transition_process(string):
                 state = 6
                 print("ESTADO: ", state)
 
-            
-            
 if __name__ == '__main__':
     main()
 
