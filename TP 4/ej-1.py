@@ -70,6 +70,8 @@ def use_ipv4():
 
     patron = '[. 0-9, 255]'
 
+    # [0-9]|[0-9]{2}|[0-2][0-5][0-9]
+
     for i in range(len(lines)):
         if re.search(patron, lines[i]):
             print("direccion ipv4 correcta")
