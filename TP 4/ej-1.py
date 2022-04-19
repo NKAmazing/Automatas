@@ -1,4 +1,5 @@
 import re
+from unittest import result
 
 def main():
     input_1 = input("Seleccione el dato a analizar: ")
@@ -59,7 +60,7 @@ def use_url():
     
 def use_ipv4():
     fs = open(r"E:\Proyectos python\Automatas\TP 4\ipv4.txt", "w+")
-    for i in range(0, 4):
+    for i in range(0, 1):
         string = input("ingrese direccion ipv4: ")
         with open(r"E:\Proyectos python\Automatas\TP 4\ipv4.txt", "a") as fs:
             fs.write(str(string[i]))
@@ -68,20 +69,22 @@ def use_ipv4():
     lines = fs.readlines()
     # print(lines)
 
-    def ip_accept(match):
-        n1,n2,n3,n4 = match
-        return n4
+    ip_ranges = re.compile('''((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)''')
 
-    ip_ranges = re.compile('(0[00-99]|1[00-99]|2[00-55])[.](0[00-99]|1[00-99]|2[00-55])[.](0[00-99]|1[00-99]|2[00-55])[.](0[00-99]|1[00-99]|2[00-55]{})')
+    valid = []
+    invalid = []
 
-    for i in range(len(lines)):
-        matches = ip_ranges.findall(lines)
+    for line in lines:
+        line = line.rstrip()
+        result = ip_ranges.search(line)
 
-        for index, result in enumerate(matches):
-            print(f'La IP {index + 1} es {ip_accept(result)}')
+        if result:
+            valid.append(line)    
+        else:
+            invalid.append(line)
 
-    
-
+    print(valid)
+    print(invalid)
 
 #([0-2][0-5][0-5])
     # [0-9]|[0-9]{2}|[0-2][0-5][0-9]
@@ -90,9 +93,6 @@ def use_ipv4():
 
 if __name__ == '__main__':
     main()
-
-
-
 
 
 
