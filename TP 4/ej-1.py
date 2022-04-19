@@ -68,20 +68,28 @@ def use_ipv4():
     lines = fs.readlines()
     # print(lines)
 
-    patron = '[. 0-9, 255]'
+    def ip_accept(match):
+        n1,n2,n3,n4 = match
+        return n4
 
-    # [0-9]|[0-9]{2}|[0-2][0-5][0-9]
+    ip_ranges = re.compile('(0[00-99]|1[00-99]|2[00-55])[.](0[00-99]|1[00-99]|2[00-55])[.](0[00-99]|1[00-99]|2[00-55])[.](0[00-99]|1[00-99]|2[00-55]{})')
 
     for i in range(len(lines)):
-        if re.search(patron, lines[i]):
-            print("direccion ipv4 correcta")
-        else:
-            print("error en la direccion")
+        matches = ip_ranges.findall(lines)
+
+        for index, result in enumerate(matches):
+            print(f'La IP {index + 1} es {ip_accept(result)}')
+
+    
+
+
+#([0-2][0-5][0-5])
+    # [0-9]|[0-9]{2}|[0-2][0-5][0-9]
+
+    
 
 if __name__ == '__main__':
     main()
-
-
 
 
 
