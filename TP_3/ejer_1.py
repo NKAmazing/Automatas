@@ -1,20 +1,76 @@
-# Ejercicio 1 - TP3 - Automata: (a|b)*
+# Ejercicio 1 - TP3 - Automata: (a|b)* AFD
 
-aut = input(str("Enter the string: "))
+import time
 
+def main():
+    print("Ingrese cualquier tipo de cadena del formato: (a|b)*")
+    string = str(input("Ingrese cadena: "))
+    transition_process(string)
 
-dfa = {0:{'a':1, 'b':2},
-       1:{'a':1, 'b':3}, 
-       2:{'a':3, 'b':2},
-       3:{'a':3, 'b':3}}
+def transition_process(string):
+    # inicializo el estado en 0
+    state = 0
+    print(f"Ha introducido: '{string}'")
+    print("INICIANDO AUTOMATA...")
+    # recorro la cadena de entrada con un for
+    for i in range(len(string)):
+        # igualo la cadena de la posicion actual a la transicion
+        transition = string[i]
+        #Para el Estado A
+        if state == 0:       
+       
+            if transition == 'a':
+                print("ESTADO: ", state)
+                state = 1
+                time.sleep(1)
 
-# accepting = "2"
-initial = 0
+            elif transition == 'b':
+                print("ESTADO: ", state)
+                state = 2
+                time.sleep(1)
 
-def accepts(transitions,initial,accepting,s):
-        state = initial
-        for c in s:
-            state = transitions[state][c]
-        return state in accepting
+            else:
+                print("ERROR")
+                state=0
+                return
+                 
+        #Para el Estado B
+        if state == 1:   
 
-print(accepts(dfa,initial,{3},aut))
+            if transition == 'a':
+                print("ESTADO: ", state)
+                state = 1
+                time.sleep(1)
+
+            elif transition == 'b':
+                print("ESTADO: ", state)
+                state = 2                
+                time.sleep(1)           
+                
+            else:
+                print("ERROR")
+                state=0
+                return
+        
+        #Para el Estado C
+        if state == 2:
+
+            if transition == 'a':
+                print("ESTADO: ", state)
+                state = 1
+                time.sleep(1)
+
+            elif transition == 'b':
+                print("ESTADO: ", state)
+                state = 2
+                time.sleep(1)              
+
+            else:
+                print("ERROR")
+                state=0
+                return
+
+    print("Estado de aceptacion alcanzado:", state)
+
+if __name__ == '__main__':
+    main()
