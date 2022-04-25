@@ -9,6 +9,8 @@ def main():
         use_url()
     elif input_1 == 'c':
         use_ipv4()
+    elif input_1 == 'd':
+        use_password()
     else:
         print("error")
 
@@ -47,6 +49,7 @@ def use_url():
 
     patron = '[a-z A-Z . 0-9]'
     patron_opt = '[http https www : /]'
+    patron_dom = ''
     
 
     for i in range(len(lines)):
@@ -72,7 +75,7 @@ def use_ipv4():
         # with open("/home/aaron/Documents/Automatas/Automatas/TP_4/ipv4.txt", "r") as fs:
     lines = fs.readlines()
 
-    ip_ranges = re.compile('''((25[0-5]|2[0-4][0-9]|[01][0-9][0-9]?(\.|$)){4})''')
+    ip_ranges = re.compile('''((25[0-5]|2[0-4][0-9]|[01][0-9][0-9]?(\.|$){4})''')
 
     valid = []
     invalid = []
@@ -89,27 +92,37 @@ def use_ipv4():
     print("IPs INVALIDAS")
     print(invalid)
 
-#([0-2][0-5][0-5])
-    # [0-9]|[0-9]{2}|[0-2][0-5][0-9]
-    #asdhsad
+
+def use_password():
+    fs = open("/home/aaron/Documents/Facultad/Tercer_Año/Automatas_y_Gramatica/Automatas/TP_4/passw.txt", "w+")
+    for i in range(0, 2):
+        string = input("ingrese su contraseña: ")
+        with open("/home/aaron/Documents/Facultad/Tercer_Año/Automatas_y_Gramatica/Automatas/TP_4/passw.txt", "a") as fs:
+            fs.write(str(string))
+            # fs.write(str(string[i]))
+            fs.write("\n")
+            fs.close()
+    fs = open("/home/aaron/Documents/Facultad/Tercer_Año/Automatas_y_Gramatica/Automatas/TP_4/passw.txt", "r")
+        # with open("/home/aaron/Documents/Automatas/Automatas/TP_4/ipv4.txt", "r") as fs:
+    lines = fs.readlines()
+
+#Buscar una letra MAY
+#Buscar letra MIN
+#Buscar 1 numero
+#Buscar 1 simbolo (def 5)
+#LEN MIN de 8 car
+
+    regex = ['''[A-Za-z]|[0-9]|[#%&*]''']
+    p_long = ['''^([0-9]){15,19}$/'''] #determina la longitud para la contraseña
+
+    if re.search(p_long, lines[i]):
+        if re.search(regex, lines[i]):
+            print("Su contraseña es válida")
+        else:
+            print("Su contraseña NO es valida")
+    else:
+        print("Su contraseña es muy corta!")
 
 if __name__ == '__main__':
     main()
 
-
-
-
-# if re.search(patron, lines[0]):
-    #     print("el email es correcto")
-    # elif re.search(patron_2, lines[0]):
-    #     print("el email es correcto")
-    # elif re.search(patron_domain, lines[0]):
-    #     print("el email es correcto")
-    # elif re.search(patron_country, lines[0]):
-    #     print("el email es correcto")
-    # else:
-    #     print("el email no corresponde con la sintaxis")
-    # if re.search(patron, lines[0]) and re.search(patron_2, lines[0]) and re.search(patron_domain, lines[0]) and re.search(patron_country, lines[0]):
-    #     print("el email es correcto")
-    # else:
-    #     print("el email no corresponde con la sintaxis")
