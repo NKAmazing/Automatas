@@ -60,15 +60,15 @@ def use_url():
     
 
 def use_ipv4():
-    fs = open("/home/aaron/Documents/Automatas/Automatas/TP_4/ipv4.txt", "w+")
+    fs = open("/home/aaron/Documents/Facultad/Tercer_Año/Automatas_y_Gramatica/Automatas/TP_4/ipv4.txt", "w+")
     for i in range(0, 4):
         string = input("ingrese direccion ipv4: ")
-        with open("/home/aaron/Documents/Automatas/Automatas/TP_4/ipv4.txt", "a") as fs:
+        with open("/home/aaron/Documents/Facultad/Tercer_Año/Automatas_y_Gramatica/Automatas/TP_4/ipv4.txt", "a") as fs:
             fs.write(str(string))
             # fs.write(str(string[i]))
             fs.write("\n")
             fs.close()
-    fs = open("/home/aaron/Documents/Automatas/Automatas/TP_4/ipv4.txt", "r")
+    fs = open("/home/aaron/Documents/Facultad/Tercer_Año/Automatas_y_Gramatica/Automatas/TP_4/ipv4.txt", "r")
         # with open("/home/aaron/Documents/Automatas/Automatas/TP_4/ipv4.txt", "r") as fs:
     lines = fs.readlines()
 
@@ -91,6 +91,7 @@ def use_ipv4():
 
 #([0-2][0-5][0-5])
     # [0-9]|[0-9]{2}|[0-2][0-5][0-9]
+    #asdhsad
 
 if __name__ == '__main__':
     main()
