@@ -14,25 +14,60 @@ def main():
         print("error")
 
 def use_email():
-    fd = open("E:\Proyectos python\Automatas\TP_4\emails.txt", "w+")
-    for i in range(0, 4):
-        string = input("ingrese email: ")
-        with open("E:\Proyectos python\Automatas\TP_4\emails.txt", "a") as fd:
-            fd.write(str(string[i]))
-            fd.write("\n")
-    fd = open("E:\Proyectos python\Automatas\TP_4\emails.txt", "r")
-    lines = fd.readlines()
+    fs = open(r"E:\Proyectos python\Automatas\TP_4\url.txt", "w+")
+    for i in range(0, 2):
+        string = input("ingrese url: ")
+        with open(r"E:\Proyectos python\Automatas\TP_4\url.txt", "a") as fs:
+            fs.write(str(string))
+            fs.write("\n")
+            fs.close()
+    fs = open(r"E:\Proyectos python\Automatas\TP_4\url.txt", "r")
+    lines = fs.readlines()
 
-    patron = '[a-z A-Z]'
-    patron_2 = '[a-z A-Z 0-9 _ . - yahoo gmail hotmail um outlook fr uk de be es]'
-    patron_domain = '[yahoo gmail hotmail um outlook]'
-    patron_country = '[fr uk de be es]'
+    # declaro regex
+    regex = re.compile('''((https|http)\:\/\/?|(www\.)?)(([a-zA-Z0-9])+|([-_]))(\.)(net|com|org|onion)([\.])?(ar|edu)?''')
+    
+    # creo listas
+    valid = []
+    invalid = []
 
-    for i in range(len(lines)):
-        if re.search(patron_2, lines[i]):
-            print("email correcto")
+    # uso un for para recorrer las lineas del archivo
+    for line in lines:
+        line = line.rstrip()
+        result = regex.search(line)
+        # busco en la regex el patron indicado y agrego a la lista si es valido
+        if result:
+            valid.append(line)    
         else:
-            print("error")
+            invalid.append(line)
+    # printeo los resultados
+    print("Emails VALIDOS")
+    print(valid)
+    print("Emails INVALIDOS")
+    print(invalid)
+
+
+
+    # fd = open("E:\Proyectos python\Automatas\TP_4\emails.txt", "w+")
+    # for i in range(0, 4):
+    #     string = input("ingrese email: ")
+    #     with open("E:\Proyectos python\Automatas\TP_4\emails.txt", "a") as fd:
+    #         fd.write(str(string))
+    #         fd.write("\n")
+    # fd = open("E:\Proyectos python\Automatas\TP_4\emails.txt", "r")
+    # lines = fd.readlines()
+
+    # regex =
+    # # patron = '[a-z A-Z]'
+    # # patron_2 = '[a-z A-Z 0-9 _ . - yahoo gmail hotmail um outlook fr uk de be es]'
+    # # patron_domain = '[yahoo gmail hotmail um outlook]'
+    # # patron_country = '[fr uk de be es]'
+
+    # for i in range(len(lines)):
+    #     if re.search(regex, lines[i]):
+    #         print("email correcto")
+    #     else:
+    #         print("error")
 
 def use_url():
     fs = open(r"E:\Proyectos python\Automatas\TP_4\url.txt", "w+")
