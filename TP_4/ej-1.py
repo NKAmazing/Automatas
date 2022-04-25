@@ -72,7 +72,7 @@ def use_ipv4():
         # with open("/home/aaron/Documents/Automatas/Automatas/TP_4/ipv4.txt", "r") as fs:
     lines = fs.readlines()
 
-    ip_ranges = re.compile('''((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)''')
+    ip_ranges = re.compile('''((25[0-5]|2[0-4][0-9]|[01][0-9][0-9]?(\.|$)){4})''')
 
     valid = []
     invalid = []
