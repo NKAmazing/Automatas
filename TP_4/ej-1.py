@@ -69,19 +69,19 @@ def use_url():
 
 
 def use_ipv4():
-    fs = open("/home/aaron/Documents/Automatas/Automatas/TP_4/ipv4.txt", "w+")
+    fs = open("/home/aaron/Documents/Facultad/Tercer_Año/Automatas_y_Gramatica/Automatas/TP_4/ipv4.txt", "w+")
     for i in range(0, 4):
         string = input("ingrese direccion ipv4: ")
-        with open("/home/aaron/Documents/Automatas/Automatas/TP_4/ipv4.txt", "a") as fs:
+        with open("/home/aaron/Documents/Facultad/Tercer_Año/Automatas_y_Gramatica/Automatas/TP_4/ipv4.txt", "a") as fs:
             fs.write(str(string))
             # fs.write(str(string[i]))
             fs.write("\n")
             fs.close()
-    fs = open("/home/aaron/Documents/Automatas/Automatas/TP_4/ipv4.txt", "r")
+    fs = open("/home/aaron/Documents/Facultad/Tercer_Año/Automatas_y_Gramatica/Automatas/TP_4/ipv4.txt", "r")
         # with open("/home/aaron/Documents/Automatas/Automatas/TP_4/ipv4.txt", "r") as fs:
     lines = fs.readlines()
 
-    ip_ranges = re.compile('''((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)''')
+    ip_ranges = re.compile('''((25[0-5]|2[0-4][0-9]|[01][0-9][0-9]?(\.|$){4})''')
 
     valid = []
     invalid = []
@@ -99,5 +99,36 @@ def use_ipv4():
     print(invalid)
 
 
+def use_password():
+    fs = open("/home/aaron/Documents/Facultad/Tercer_Año/Automatas_y_Gramatica/Automatas/TP_4/passw.txt", "w+")
+    for i in range(0, 2):
+        string = input("ingrese su contraseña: ")
+        with open("/home/aaron/Documents/Facultad/Tercer_Año/Automatas_y_Gramatica/Automatas/TP_4/passw.txt", "a") as fs:
+            fs.write(str(string))
+            # fs.write(str(string[i]))
+            fs.write("\n")
+            fs.close()
+    fs = open("/home/aaron/Documents/Facultad/Tercer_Año/Automatas_y_Gramatica/Automatas/TP_4/passw.txt", "r")
+        # with open("/home/aaron/Documents/Automatas/Automatas/TP_4/ipv4.txt", "r") as fs:
+    lines = fs.readlines()
+
+#Buscar una letra MAY
+#Buscar letra MIN
+#Buscar 1 numero
+#Buscar 1 simbolo (def 5)
+#LEN MIN de 8 car
+
+    regex = ['''[A-Za-z]|[0-9]|[#%&*]''']
+    p_long = ['''^([0-9]){15,19}$/'''] #determina la longitud para la contraseña
+
+    if re.search(p_long, lines[i]):
+        if re.search(regex, lines[i]):
+            print("Su contraseña es válida")
+        else:
+            print("Su contraseña NO es valida")
+    else:
+        print("Su contraseña es muy corta!")
+
 if __name__ == '__main__':
     main()
+
