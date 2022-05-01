@@ -25,7 +25,7 @@ def use_email():
     lines = fs.readlines()
 
     # declaro regex
-    regex = re.compile('''((https|http)\:\/\/?|(www\.)?)(([a-zA-Z0-9])+|([-_]))(\.)(net|com|org|onion)([\.])?(ar|edu)?''')
+    regex = re.compile('''(^(https|http)\:\/\/?|(www\.)?)(([a-zA-Z0-9])+|([-_]))(\.)(net|com|org|onion)([\.])?(ar|edu)?$''')
     
     # creo listas
     valid = []
@@ -46,29 +46,6 @@ def use_email():
     print("Emails INVALIDOS")
     print(invalid)
 
-
-
-    # fd = open("E:\Proyectos python\Automatas\TP_4\emails.txt", "w+")
-    # for i in range(0, 4):
-    #     string = input("ingrese email: ")
-    #     with open("E:\Proyectos python\Automatas\TP_4\emails.txt", "a") as fd:
-    #         fd.write(str(string))
-    #         fd.write("\n")
-    # fd = open("E:\Proyectos python\Automatas\TP_4\emails.txt", "r")
-    # lines = fd.readlines()
-
-    # regex =
-    # # patron = '[a-z A-Z]'
-    # # patron_2 = '[a-z A-Z 0-9 _ . - yahoo gmail hotmail um outlook fr uk de be es]'
-    # # patron_domain = '[yahoo gmail hotmail um outlook]'
-    # # patron_country = '[fr uk de be es]'
-
-    # for i in range(len(lines)):
-    #     if re.search(regex, lines[i]):
-    #         print("email correcto")
-    #     else:
-    #         print("error")
-
 def use_url():
     fs = open(r"E:\Proyectos python\Automatas\TP_4\url.txt", "w+")
     for i in range(0, 2):
@@ -81,7 +58,7 @@ def use_url():
     lines = fs.readlines()
 
     # declaro regex
-    regex = re.compile('''((https|http)\:\/\/?|(www\.)?)(([a-zA-Z0-9])+|([-_]))(\.)(net|com|org|onion)([\.])?(ar|edu)?''')
+    regex = re.compile('''(^(https|http)\:\/\/?|(www\.)?)(([a-zA-Z0-9])+|([-_]))(\.)(net|com|org|onion)([\.])?(ar|edu)?$''')
     
     # creo listas
     valid = []
@@ -154,16 +131,22 @@ def use_password():
 #Buscar 1 simbolo (def 5)
 #LEN MIN de 8 car
 
-    regex = ['''[A-Za-z]|[0-9]|[#%&*]''']
-    p_long = ['''^([0-9]){15,19}$/'''] #determina la longitud para la contraseña
+    passw_range = re.compile('''^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@%?&]).{8,20}$''')
 
-    if re.search(p_long, lines[i]):
-        if re.search(regex, lines[i]):
-            print("Su contraseña es válida")
+    valid = []
+    invalid = []
+
+    for line in lines:
+        line = line.rstrip()
+        result = passw_range.search(line)
+        if result:
+            valid.append(line)    
         else:
-            print("Su contraseña NO es valida")
-    else:
-        print("Su contraseña es muy corta!")
+            invalid.append(line)
+    print("PASSWs VALIDAS")
+    print(valid)
+    print("PASSWs INVALIDAS")
+    print(invalid)
 
 if __name__ == '__main__':
     main()
