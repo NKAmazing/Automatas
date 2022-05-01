@@ -129,9 +129,9 @@ def use_password():
 #Buscar letra MIN
 #Buscar 1 numero
 #Buscar 1 simbolo (def 5)
-#LEN MIN de 8 car
+#LEN MIN de 8 car#
 
-    passw_range = re.compile('''^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@%?&]).{8,20}$''')
+    passw_range = re.compile('''^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@%?&!]).{8,20}$''')
 
     valid = []
     invalid = []
