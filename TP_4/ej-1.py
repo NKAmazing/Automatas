@@ -1,3 +1,7 @@
+#Trabajo Practico N1 - REGEX
+#Alumnos: Santiago Zapata, Nicolas Mayoral, Aaron Moya
+
+
 import re
 
 def main():
@@ -13,6 +17,7 @@ def main():
     else:
         print("error")
 
+# Funcion para Validacion de EMAIL
 def use_email():
     fs = open(r"E:\Proyectos python\Automatas\TP_4\url.txt", "w+")
     for i in range(0, 2):
@@ -46,6 +51,8 @@ def use_email():
     print("Emails INVALIDOS")
     print(invalid)
 
+
+# Funcion para Validacion de URL
 def use_url():
     fs = open(r"E:\Proyectos python\Automatas\TP_4\url.txt", "w+")
     for i in range(0, 2):
@@ -79,18 +86,16 @@ def use_url():
     print("URLs INVALIDAS")
     print(invalid)
 
-
+# Funcion para Validacion de IPV4
 def use_ipv4():
     fs = open("/home/aaron/Documents/Facultad/Tercer_Año/Automatas_y_Gramatica/Automatas/TP_4/ipv4.txt", "w+")
     for i in range(0, 4):
         string = input("ingrese direccion ipv4: ")
         with open("/home/aaron/Documents/Facultad/Tercer_Año/Automatas_y_Gramatica/Automatas/TP_4/ipv4.txt", "a") as fs:
             fs.write(str(string))
-            # fs.write(str(string[i]))
             fs.write("\n")
             fs.close()
     fs = open("/home/aaron/Documents/Facultad/Tercer_Año/Automatas_y_Gramatica/Automatas/TP_4/ipv4.txt", "r")
-        # with open("/home/aaron/Documents/Automatas/Automatas/TP_4/ipv4.txt", "r") as fs:
     lines = fs.readlines()
 
     ip_ranges = re.compile('''^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$''')
@@ -111,18 +116,16 @@ def use_ipv4():
     print(invalid)
 
 
-
+# Funcion para Validacion de CONSTRASEÑAS
 def use_password():
     fs = open("/home/aaron/Documents/Facultad/Tercer_Año/Automatas_y_Gramatica/Automatas/TP_4/passw.txt", "w+")
     for i in range(0, 2):
         string = input("ingrese su contraseña: ")
         with open("/home/aaron/Documents/Facultad/Tercer_Año/Automatas_y_Gramatica/Automatas/TP_4/passw.txt", "a") as fs:
             fs.write(str(string))
-            # fs.write(str(string[i]))
             fs.write("\n")
             fs.close()
     fs = open("/home/aaron/Documents/Facultad/Tercer_Año/Automatas_y_Gramatica/Automatas/TP_4/passw.txt", "r")
-        # with open("/home/aaron/Documents/Automatas/Automatas/TP_4/ipv4.txt", "r") as fs:
     lines = fs.readlines()
 
 #Buscar una letra MAY
