@@ -1,4 +1,5 @@
-t
-a
-l
-a
+& C:/Users/Nicolas/AppData/Local/Programs/Python/Python310/python.exe "e:/Proyectos python/Automatas/TP_4/ej-1.py"
+& C:/Users/Nicolas/AppData/Local/Programs/Python/Python310/python.exe "e:/Proyectos python/Automatas/TP_4/ej-1.py"
+& C:/Users/Nicolas/AppData/Local/Programs/Python/Python310/python.exe "e:/Proyectos python/Automatas/TP_4/ej-1.py"
+nm
+d

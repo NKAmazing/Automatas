@@ -5,6 +5,13 @@
 import re
 
 def main():
+    print('''
+    OPCIONES:
+    a) Email
+    b) Direccion URL
+    c) Direccion IPV4
+    d) Contraseña segura
+    ''')
     input_1 = input("Seleccione el dato a analizar: ")
     if input_1 == 'a':
         use_email()
@@ -19,18 +26,18 @@ def main():
 
 # Funcion para Validacion de EMAIL
 def use_email():
-    fs = open(r"E:\Proyectos python\Automatas\TP_4\url.txt", "w+")
-    for i in range(0, 2):
-        string = input("ingrese url: ")
-        with open(r"E:\Proyectos python\Automatas\TP_4\url.txt", "a") as fs:
+    fs = open(r"E:\Proyectos python\Automatas\TP_4\emails.txt", "w+")
+    for i in range(0, 5):
+        string = input("\ningrese email: ")
+        with open(r"E:\Proyectos python\Automatas\TP_4\emails.txt", "a") as fs:
             fs.write(str(string))
             fs.write("\n")
             fs.close()
-    fs = open(r"E:\Proyectos python\Automatas\TP_4\url.txt", "r")
+    fs = open(r"E:\Proyectos python\Automatas\TP_4\emails.txt", "r")
     lines = fs.readlines()
 
     # declaro regex
-    regex = re.compile('''(^(https|http)\:\/\/?|(www\.)?)(([a-zA-Z0-9])+|([-_]))(\.)(net|com|org|onion)([\.])?(ar|edu)?$''')
+    regex = re.compile('''(([a-zA-Z0-9_-])+(\@)(hotmail|gmail|yahoo|outlook|um)(\.)(es|com|edu|us)([\.])?(ar|uk)?$)''')
     
     # creo listas
     valid = []
@@ -55,8 +62,8 @@ def use_email():
 # Funcion para Validacion de URL
 def use_url():
     fs = open(r"E:\Proyectos python\Automatas\TP_4\url.txt", "w+")
-    for i in range(0, 2):
-        string = input("ingrese url: ")
+    for i in range(0, 5):
+        string = input("\ningrese url: ")
         with open(r"E:\Proyectos python\Automatas\TP_4\url.txt", "a") as fs:
             fs.write(str(string))
             fs.write("\n")
@@ -88,14 +95,14 @@ def use_url():
 
 # Funcion para Validacion de IPV4
 def use_ipv4():
-    fs = open("/home/aaron/Documents/Facultad/Tercer_Año/Automatas_y_Gramatica/Automatas/TP_4/ipv4.txt", "w+")
-    for i in range(0, 4):
-        string = input("ingrese direccion ipv4: ")
-        with open("/home/aaron/Documents/Facultad/Tercer_Año/Automatas_y_Gramatica/Automatas/TP_4/ipv4.txt", "a") as fs:
+    fs = open("E:\Proyectos python\Automatas\TP_4\ipv4.txt", "w+")
+    for i in range(0, 5):
+        string = input("\ningrese direccion ipv4: ")
+        with open("E:\Proyectos python\Automatas\TP_4\ipv4.txt", "a") as fs:
             fs.write(str(string))
             fs.write("\n")
             fs.close()
-    fs = open("/home/aaron/Documents/Facultad/Tercer_Año/Automatas_y_Gramatica/Automatas/TP_4/ipv4.txt", "r")
+    fs = open("E:\Proyectos python\Automatas\TP_4\ipv4.txt", "r")
     lines = fs.readlines()
 
     ip_ranges = re.compile('''^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$''')
@@ -118,21 +125,30 @@ def use_ipv4():
 
 # Funcion para Validacion de CONSTRASEÑAS
 def use_password():
-    fs = open("/home/aaron/Documents/Facultad/Tercer_Año/Automatas_y_Gramatica/Automatas/TP_4/passw.txt", "w+")
-    for i in range(0, 2):
+    fs = open("E:\Proyectos python\Automatas\TP_4\passw.txt", "w+")
+    print('''
+    Su contraseña debe contener los siguientes parametros: ''')
+    print('''
+    - Debe contener una mayuscula
+    - Debe contener una minuscula
+    - Debe contener al menos un caracter especial: % & @ ? !
+    - Debe contener al menos un numero
+    - Debe ser minimo 8 caracteres
+    ''')
+    for i in range(0, 5):
         string = input("ingrese su contraseña: ")
-        with open("/home/aaron/Documents/Facultad/Tercer_Año/Automatas_y_Gramatica/Automatas/TP_4/passw.txt", "a") as fs:
+        with open("E:\Proyectos python\Automatas\TP_4\passw.txt", "a") as fs:
             fs.write(str(string))
             fs.write("\n")
             fs.close()
-    fs = open("/home/aaron/Documents/Facultad/Tercer_Año/Automatas_y_Gramatica/Automatas/TP_4/passw.txt", "r")
+    fs = open("E:\Proyectos python\Automatas\TP_4\passw.txt", "r")
     lines = fs.readlines()
 
-#Buscar una letra MAY
-#Buscar letra MIN
-#Buscar 1 numero
-#Buscar 1 simbolo (def 5)
-#LEN MIN de 8 car#
+# Buscar una letra MAY
+# Buscar letra MIN
+# Buscar 1 numero
+# Buscar 1 simbolo (def 5)
+# LEN MIN de 8 car#
 
     passw_range = re.compile('''^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@%?&!]).{8,20}$''')
 
