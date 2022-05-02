@@ -1,5 +1,6 @@
-& C:/Users/Nicolas/AppData/Local/Programs/Python/Python310/python.exe "e:/Proyectos python/Automatas/TP_4/ej-1.py"
-& C:/Users/Nicolas/AppData/Local/Programs/Python/Python310/python.exe "e:/Proyectos python/Automatas/TP_4/ej-1.py"
-& C:/Users/Nicolas/AppData/Local/Programs/Python/Python310/python.exe "e:/Proyectos python/Automatas/TP_4/ej-1.py"
-nm
-d
+nm@hotmail.com
+NK123@hotmail.com
+Dib123@@hotmail.com
+hola123@yahoo.com.ar
+alumno@um.edu.ar
+alumno@um.edu.ar 

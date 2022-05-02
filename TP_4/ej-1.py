@@ -2,17 +2,21 @@
 #Alumnos: Santiago Zapata, Nicolas Mayoral, Aaron Moya
 
 
+import time
 import re
 
 def main():
     print('''
     OPCIONES:
+
     a) Email
     b) Direccion URL
     c) Direccion IPV4
     d) Contraseña segura
+    e) Salir
     ''')
     input_1 = input("Seleccione el dato a analizar: ")
+    print("\n")
     if input_1 == 'a':
         use_email()
     elif input_1 == 'b':
@@ -21,18 +25,14 @@ def main():
         use_ipv4()
     elif input_1 == 'd':
         use_password()
+    elif input_1 == 'e':
+        print("Saliendo del sistema...")
+        exit()
     else:
         print("error")
 
 # Funcion para Validacion de EMAIL
 def use_email():
-    fs = open(r"E:\Proyectos python\Automatas\TP_4\emails.txt", "w+")
-    for i in range(0, 5):
-        string = input("\ningrese email: ")
-        with open(r"E:\Proyectos python\Automatas\TP_4\emails.txt", "a") as fs:
-            fs.write(str(string))
-            fs.write("\n")
-            fs.close()
     fs = open(r"E:\Proyectos python\Automatas\TP_4\emails.txt", "r")
     lines = fs.readlines()
 
@@ -53,21 +53,15 @@ def use_email():
         else:
             invalid.append(line)
     # printeo los resultados
-    print("Emails VALIDOS")
-    print(valid)
-    print("Emails INVALIDOS")
-    print(invalid)
+    print("Emails VALIDOS:\n")
+    print(valid, "\n")
+    print("Emails INVALIDOS:\n")
+    print(invalid, "\n")
+    return_menu()
 
 
 # Funcion para Validacion de URL
 def use_url():
-    fs = open(r"E:\Proyectos python\Automatas\TP_4\url.txt", "w+")
-    for i in range(0, 5):
-        string = input("\ningrese url: ")
-        with open(r"E:\Proyectos python\Automatas\TP_4\url.txt", "a") as fs:
-            fs.write(str(string))
-            fs.write("\n")
-            fs.close()
     fs = open(r"E:\Proyectos python\Automatas\TP_4\url.txt", "r")
     lines = fs.readlines()
 
@@ -88,20 +82,14 @@ def use_url():
         else:
             invalid.append(line)
     # printeo los resultados
-    print("URLs VALIDAS")
-    print(valid)
-    print("URLs INVALIDAS")
-    print(invalid)
+    print("URLs VALIDAS:\n")
+    print(valid, "\n")
+    print("URLs INVALIDAS:\n")
+    print(invalid, "\n")
+    return_menu()
 
 # Funcion para Validacion de IPV4
 def use_ipv4():
-    fs = open("E:\Proyectos python\Automatas\TP_4\ipv4.txt", "w+")
-    for i in range(0, 5):
-        string = input("\ningrese direccion ipv4: ")
-        with open("E:\Proyectos python\Automatas\TP_4\ipv4.txt", "a") as fs:
-            fs.write(str(string))
-            fs.write("\n")
-            fs.close()
     fs = open("E:\Proyectos python\Automatas\TP_4\ipv4.txt", "r")
     lines = fs.readlines()
 
@@ -117,15 +105,15 @@ def use_ipv4():
             valid.append(line)    
         else:
             invalid.append(line)
-    print("IPs VALIDAS")
-    print(valid)
-    print("IPs INVALIDAS")
-    print(invalid)
+    print("IPs VALIDAS:\n")
+    print(valid, "\n")
+    print("IPs INVALIDAS:\n")
+    print(invalid, "\n")
+    return_menu()
 
 
 # Funcion para Validacion de CONSTRASEÑAS
 def use_password():
-    fs = open("E:\Proyectos python\Automatas\TP_4\passw.txt", "w+")
     print('''
     Su contraseña debe contener los siguientes parametros: ''')
     print('''
@@ -135,20 +123,8 @@ def use_password():
     - Debe contener al menos un numero
     - Debe ser minimo 8 caracteres
     ''')
-    for i in range(0, 5):
-        string = input("ingrese su contraseña: ")
-        with open("E:\Proyectos python\Automatas\TP_4\passw.txt", "a") as fs:
-            fs.write(str(string))
-            fs.write("\n")
-            fs.close()
     fs = open("E:\Proyectos python\Automatas\TP_4\passw.txt", "r")
     lines = fs.readlines()
-
-# Buscar una letra MAY
-# Buscar letra MIN
-# Buscar 1 numero
-# Buscar 1 simbolo (def 5)
-# LEN MIN de 8 car#
 
     passw_range = re.compile('''^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@%?&!]).{8,20}$''')
 
@@ -162,10 +138,21 @@ def use_password():
             valid.append(line)    
         else:
             invalid.append(line)
-    print("PASSWs VALIDAS")
-    print(valid)
-    print("PASSWs INVALIDAS")
-    print(invalid)
+    print("PASSWs VALIDAS:\n")
+    print(valid, "\n")
+    print("PASSWs INVALIDAS:\n")
+    print(invalid, "\n")
+    return_menu()
+
+def return_menu():
+    input_2 = input("Quiere volver al menu principal? (si/no) ")
+    print("\n")
+    if input_2 == 'si':
+        print("Regresando...")
+        time.sleep(1)
+        main()
+    else:
+        exit()
 
 if __name__ == '__main__':
     main()
