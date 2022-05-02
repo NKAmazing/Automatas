@@ -1,7 +1,6 @@
 #Trabajo Practico N1 - REGEX
 #Alumnos: Santiago Zapata, Nicolas Mayoral, Aaron Moya
 
-
 import time
 import re
 
