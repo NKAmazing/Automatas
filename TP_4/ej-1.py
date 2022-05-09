@@ -36,7 +36,7 @@ def use_email():
     lines = fs.readlines()
 
     # declaro regex
-    regex = re.compile('''(([a-zA-Z0-9_-])+(\@)(hotmail|gmail|yahoo|outlook|um)(\.)(es|com|edu|us)([\.])?(ar|uk)?$)''')
+    regex = re.compile('''([a-zA-Z]([a-zA-Z0-9_-])+(\@)(hotmail|gmail|yahoo|outlook|um)(\.)(es|com|edu|us)(\.(ar|uk))?$)''')
     
     # creo listas
     valid = []
@@ -45,7 +45,7 @@ def use_email():
     # uso un for para recorrer las lineas del archivo
     for line in lines:
         line = line.rstrip()
-        result = regex.search(line)
+        result = regex.fullmatch(line)
         # busco en la regex el patron indicado y agrego a la lista si es valido
         if result:
             valid.append(line)    
@@ -65,7 +65,7 @@ def use_url():
     lines = fs.readlines()
 
     # declaro regex
-    regex = re.compile('''(^(https|http)\:\/\/?|(www\.)?)(([a-zA-Z0-9])+|([-_]))(\.)(net|com|org|onion)([\.])?(ar|edu)?$''')
+    regex = re.compile('''(^((https|http)\:\/\/)?(www\.)?)(([a-zA-Z0-9])+|([-_]))(\.)(net|com|org|onion)([\.](ar|edu))?$''')
     
     # creo listas
     valid = []
@@ -74,7 +74,7 @@ def use_url():
     # uso un for para recorrer las lineas del archivo
     for line in lines:
         line = line.rstrip()
-        result = regex.search(line)
+        result = regex.fullmatch(line)
         # busco en la regex el patron indicado y agrego a la lista si es valido
         if result:
             valid.append(line)    

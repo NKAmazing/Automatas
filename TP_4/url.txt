@@ -1,5 +1,9 @@
 hola.com
 adios.
 facebook.com
-google.com.ar
+google.comar
 www.hola.
+hhtps://facebook.com
+https://facebook.com
+http://www.google.com
+google.com.ar
