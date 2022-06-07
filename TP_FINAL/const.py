@@ -3,6 +3,7 @@
 # paths
 PATH = "E:\\Proyectos python\\Computacion 1 FINAL\\FINAL 16-05-22\\N_Ejercicio\\libros.txt"
 PATH_1 = "E:\\Proyectos python\\Computacion 1 FINAL\\FINAL 16-05-22\\N_Ejercicio\\ejemplo_2.txt"
+PATH_CSV = "Usuarios WiFi.csv"
 # paths con raw incluido (un solo backslash '\' )
 PATH_2 = r"E:\Proyectos python\Computacion 1 FINAL\FINAL 16-05-22\N_Ejercicio\archives\ejemplo.txt"
 PATH_3 = r"E:\Proyectos python\Computacion 1 FINAL\FINAL 16-05-22\N_Ejercicio\archives\ejemplo_2.txt"
@@ -25,6 +26,7 @@ ISB = "Enter ISB: "
 COUNTRY = "Enter country: "
 AGE = "Enter Age: "
 QUESTION_SL = "What list do you want to see? bk/cl : "
+UN_INP = "Enter Username: "
 
 # errores o emptys
 ERR = "UNEXPECTED ERROR"
