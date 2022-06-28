@@ -5,10 +5,6 @@ import pandas as pd
 class User:
 
     def operate_xlsx_file(self):
-        # data = pd.read_csv(cs.PATH_CSV, on_bad_lines='skip')
-        # df = pd.DataFrame(data)
-        # df_dropna = df.dropna(0) 
-        # return df_dropna
         df = pd.read_excel("Usuarios WiFi.xlsx")
         df = df.dropna()
         return df
