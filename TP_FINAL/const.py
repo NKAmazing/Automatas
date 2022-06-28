@@ -80,10 +80,12 @@ Here you will find the instructions:
 
 # mensajes
 RETURN_MENU = "Returning to Main Menu..."
+SEARCHING_DATA = "Looking for any matches..."
 LOAD_DATA = "The data was successfully loaded."
 CLIENT_ADDED = "The client was successfully added."
 DEL_DATA = "The data has been deleted successfully from file."
 CLIENT_ATTENDED = "All clients was successfully attended."
+USER_NOT_FOUND = "The user was not found."
 INSC_FALSE = "You cannot inscribed to this assignature."
 INSC_TRUE = "You have successfully inscribed to the assignature."
 NOT_INT_DNI = "Need to be a int digit!"

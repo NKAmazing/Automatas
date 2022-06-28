@@ -4,21 +4,29 @@ import pandas as pd
 
 class User:
 
-    def operate_csv_file(self):
-        data = pd.read_csv(cs.PATH_CSV, on_bad_lines='skip')
-        df = pd.DataFrame(data)
-        df_dropna = df.dropna(0) 
-        return df_dropna
+    def operate_xlsx_file(self):
+        # data = pd.read_csv(cs.PATH_CSV, on_bad_lines='skip')
+        # df = pd.DataFrame(data)
+        # df_dropna = df.dropna(0) 
+        # return df_dropna
+        df = pd.read_excel("Usuarios WiFi.xlsx")
+        df = df.dropna()
+        return df
 
     def list_session_id(self):
         print(cs.JUMP_LINE)
-        df = self.operate_csv_file()
         inp = input(cs.UN_INP)
+        print(cs.JUMP_LINE)
+        print(cs.SEARCHING_DATA)
+        df = self.operate_xlsx_file()
         if inp in df.values:
-            df2 = df.loc["ID Conexion unico", "Usuario"]
-            # revisar esto para poder listar con loc
-        print("Aca voy a listar lo del ejercicio a)")
-        time.sleep(1)
+            df_loc = df.loc[:,["ID Conexion unico", "Usuario"]]
+            usuarios = df_loc[df_loc["Usuario"].str.contains(inp)]
+            print(cs.JUMP_LINE)
+            print(usuarios)
+            usuarios.to_excel("Usuarios.xlsx")
+        else:
+            print(cs.USER_NOT_FOUND)
 
     def print_csv(self):
         # data = pd.read_csv(cs.PATH_CSV, header=0)
