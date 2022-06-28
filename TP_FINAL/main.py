@@ -14,6 +14,7 @@ def main():
             user.list_session_id()
             ft.return_menu()
         elif inp == 'b':
+            user.print_csv()
             ft.return_menu()
         elif inp == 'c':
             ft.return_menu()

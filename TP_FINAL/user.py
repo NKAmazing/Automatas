@@ -18,3 +18,10 @@ class User:
             # revisar esto para poder listar con loc
         print("Aca voy a listar lo del ejercicio a)")
         time.sleep(1)
+
+    def print_csv(self):
+        # data = pd.read_csv(cs.PATH_CSV, header=0)
+        # print(data.shape)
+        # print(data.head(10))
+        df = self.operate_csv_file()
+        print(df)
