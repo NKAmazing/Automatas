@@ -5,8 +5,9 @@ import pandas as pd
 class User:
 
     def operate_csv_file(self):
-        data = pd.read_csv(cs.PATH_CSV)
-        df = pd.DataFrame(data) 
+        data = pd.read_csv(cs.PATH_CSV, on_bad_lines='skip')
+        df = pd.DataFrame(data)
+        df.dropna(0) 
         return df
 
     def list_session_id(self):
