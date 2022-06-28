@@ -7,8 +7,8 @@ class User:
     def operate_csv_file(self):
         data = pd.read_csv(cs.PATH_CSV, on_bad_lines='skip')
         df = pd.DataFrame(data)
-        df.dropna(0) 
-        return df
+        df_dropna = df.dropna(0) 
+        return df_dropna
 
     def list_session_id(self):
         print(cs.JUMP_LINE)
