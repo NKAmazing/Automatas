@@ -2,7 +2,7 @@ import const as cs
 import functions as ft
 import time
 import user as us
-
+#._.xD
 
 def main():
     user = us.User()
@@ -40,3 +40,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    
