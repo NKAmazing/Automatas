@@ -47,20 +47,20 @@ MENU SOFTWARE NAME
 
 OPTIONS:
 
-    a) Listar todas las sesiones de un usuario mediante su ID.
-    b) Listar todo los inicios de sesion.
-    c) Tiempo total de la sesion de un usuario.
-    d) Mostrar MAC de un usuario.
-    e) Listar las diferentes MAC de un usuario.
-    f) Listar los usuarios conectados a un AP.
-    g) Mostrar el trafico de un usuario.
-    i) Listar los AP ordenados por trafico total.
+    a) List all sessions of a User through the ID.
+    b) List all logins.
+    c) Total time of session of a user.
+    d) Check MAC from a User.
+    e) List all of the differents MAC of a User.
+    f) List all Users connected to an AP.
+    g) Show trafic of a User.
+    i) List APs sorted by total traffic
 
-    h) Ayuda.
+    h) Help.
 
-    q) Salir.
+    q) Quit.
 
-Que deseas hacer?
+What do you wish to do?
 
 '''
 # help
