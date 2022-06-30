@@ -1,12 +1,31 @@
 import const
 import time
 from main import *
+import user as us
 
 def help_function():
     print(const.JUMP_LINE)
     time.sleep(0.5)
     print(const.HELP)
-    time.sleep(0.5)
+    time.sleep(2)
+    print(const.INFO_HELP)
+    inp = input(const.INP_SHOW_DATA)
+    if inp.isupper():
+        inp = inp.lower()
+    if inp == 'y':
+        print(const.JUMP_LINE)
+        time.sleep(0.5)
+        print(const.LOADING_DATA)
+        print(const.JUMP_LINE)
+        user = us.User()
+        user.print_xlsx()
+        time.sleep(0.5)
+        print(const.JUMP_LINE)
+        print(const.LOAD_DATA)
+    elif inp == 'n':
+        time.sleep(0.5)
+    else:
+        error_menu()
 
 def return_menu():
     print(const.JUMP_LINE)
@@ -38,18 +57,4 @@ def error_menu():
     print(const.RETURN_MENU)
     time.sleep(0.5)
 
-# def set_objects():
-#     library = Library()
-#     book1 = Book("A storm of Swords", "George RR Martin", "1234")
-#     book2 = Book("Clash of Kings", "George RR Martin", "5678")
-#     book3 = Book("A Dance of Dragons", "George RR Martin", "1243")
-#     library.add_to_list(book1)
-#     library.add_to_list(book2)
-#     library.add_to_list(book3)
-#     client1 = Client("Nicolas", "Argentina", 22)
-#     client2 = Client("Juan", "Argentina", 22)
-#     client3 = Client("Francisco", "Argentina", 21)
-#     library.add_client_list(client1)
-#     library.add_client_list(client2)
-#     library.add_client_list(client3)
 

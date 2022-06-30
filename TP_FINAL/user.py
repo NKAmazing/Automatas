@@ -27,7 +27,7 @@ class User:
             print(cs.USER_NOT_FOUND)
         time.sleep(0.5)
 
-    def print_csv(self):
+    def print_xlsx(self):
         df = self.operate_xlsx_file()
         print(df)
 

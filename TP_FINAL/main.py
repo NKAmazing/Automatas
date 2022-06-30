@@ -27,8 +27,8 @@ def main():
         elif inp == 'g':
             ft.return_menu()
         elif inp == 'h':
-            print(cs.HELP)
-            time.sleep(3)
+            ft.help_function()
+            time.sleep(1)
             ft.return_menu()
         elif inp == 'i':
             ft.return_menu()

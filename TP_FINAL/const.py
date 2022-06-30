@@ -22,6 +22,7 @@ PATH_XLSX_MACS = "MACs de Usuario.xlsx"
 
 # inputs
 QUESTION_RET = "Do yo want to return to Main Menu? (Y/N) "
+INP_SHOW_DATA = "Do you wish to view the full information of the Connections? (Y/N) "
 INP_A = "From what asignature do you want to check students? "
 INP_Q = "What queue do you want to attend? 1/2 : "
 INP_DB = "What queue do you want to add to database? 1/2 : "
@@ -50,7 +51,7 @@ EMPTY_DICT = "This assigned book list is empty."
 
 # menu
 MENU = '''
-MENU SOFTWARE NAME
+CONNECTION REPORTING SOFTWARE SERVICE
 
 OPTIONS:
 
@@ -74,13 +75,17 @@ What do you wish to do?
 HELP = '''
 HELP:
 
-This is a help software for the user. 
+This is a connection reporting software. You can check 
+or view the information of multiples connections about 
+different users.
 
 Here you will find the instructions:
 
-- instruction 1
-- instruction 2
-- instruction 3
+- Press the correct Key for option you want.
+- Enter the data the software is going to need.
+- View the information that the software provides you.
+- After choose an option you can return to the main menu if you wish so.
+- To exit the program, you have to press the correct option key (q) in the terminal.
 
 '''
 
@@ -88,6 +93,7 @@ Here you will find the instructions:
 # mensajes
 RETURN_MENU = "Returning to Main Menu..."
 SEARCHING_DATA = "Looking for any matches..."
+LOADING_DATA = "Loading data..."
 LOAD_DATA = "The data was successfully loaded."
 CLIENT_ADDED = "The client was successfully added."
 DEL_DATA = "The data has been deleted successfully from file."
@@ -103,6 +109,7 @@ CHOOSE_BOOK = "Choose a Book from book list: "
 CHOOSE_CLIENT = "Choose a Client from client list: "
 BK_ASSIGNED = "The book was assigned to a client."
 INP_FB = "You have chosen option: "
+INFO_HELP = "To test how it works."
 
 # operaciones de string
 JUMP_LINE = "\n"
