@@ -5,7 +5,7 @@ import pandas as pd
 class User:
 
     def operate_xlsx_file(self):
-        df = pd.read_excel("Usuarios WiFi.xlsx") # lee el archivo
+        df = pd.read_excel(cs.PATH_XLSX) # lee el archivo
         df = df.dropna()
         return df
 
@@ -22,13 +22,13 @@ class User:
             usuarios = df_loc[df_loc["Usuario"].str.contains(inp)]
             print(cs.JUMP_LINE)
             print(usuarios)
-            usuarios.to_excel("Usuarios.xlsx") # guarda los datos en un excel
+            usuarios.to_excel(cs.PATH_XLSX_USER) # guarda los datos en un excel
         else:
             print(cs.USER_NOT_FOUND)
         time.sleep(0.5)
 
     def print_csv(self):
-        df = self.operate_csv_file()
+        df = self.operate_xlsx_file()
         print(df)
 
     def list_macs_user(self):
@@ -42,7 +42,7 @@ class User:
             usuarios = df_loc[df_loc["Usuario"].str.contains(inp)]
             print(cs.JUMP_LINE)
             print(usuarios)
-            usuarios.to_excel("MACs de Usuario.xlsx")
+            usuarios.to_excel(cs.PATH_XLSX_MACS)
         else:
             print(cs.USER_NOT_FOUND)
         time.sleep(0.5)

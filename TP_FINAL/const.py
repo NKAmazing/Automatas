@@ -3,7 +3,7 @@
 # paths
 PATH = "E:\\Proyectos python\\Computacion 1 FINAL\\FINAL 16-05-22\\N_Ejercicio\\libros.txt"
 PATH_1 = "E:\\Proyectos python\\Computacion 1 FINAL\\FINAL 16-05-22\\N_Ejercicio\\ejemplo_2.txt"
-PATH_CSV = "Usuarios WiFi.csv"
+
 # paths con raw incluido (un solo backslash '\' )
 PATH_2 = r"E:\Proyectos python\Computacion 1 FINAL\FINAL 16-05-22\N_Ejercicio\archives\ejemplo.txt"
 PATH_3 = r"E:\Proyectos python\Computacion 1 FINAL\FINAL 16-05-22\N_Ejercicio\archives\ejemplo_2.txt"
@@ -12,6 +12,13 @@ file_name = "ejemplo"
 file_name_2 = "ejemplo_2"
 PATH_4 = f"E:\\Proyectos python\\Computacion 1 FINAL\\FINAL 16-05-22\\N_Ejercicio\\archives\\{file_name}.txt"
 PATH_5 = f"E:\\Proyectos python\\Computacion 1 FINAL\\FINAL 16-05-22\\N_Ejercicio\\archives\\{file_name_2}.txt"
+
+# paths para usar con Pandas
+PATH_CSV = "Usuarios WiFi.csv"
+PATH_XLSX = "Usuarios WiFi.xlsx"
+FULLPATH_XLSX = r"C:\Users\Nicolas\Proyectos Programacion\Automatas\TP_FINAL\Usuarios WiFi.xlsx"
+PATH_XLSX_USER = "Usuarios.xlsx"
+PATH_XLSX_MACS = "MACs de Usuario.xlsx"
 
 # inputs
 QUESTION_RET = "Do yo want to return to Main Menu? (Y/N) "
