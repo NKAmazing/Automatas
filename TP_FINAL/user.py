@@ -68,7 +68,7 @@ class User:
                 fecha_2 = datetime.strptime(inp_2, '%d/%m/%Y')
             else:
                 print(cs.SEARCHING_DATA)
-                fecha_usr = df_loc[(df_loc["Usuario"].str.contains(usr_input))]
+                fecha_usr = df_loc[df_loc["Usuario"].str.contains(usr_input)]
                 resultado = fecha_usr.loc[df["Inicio de Conexi¢n"].astype(str).isin([inp])]
                 print(cs.JUMP_LINE)
                 print(resultado)
