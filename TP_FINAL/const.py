@@ -48,7 +48,7 @@ MENU SOFTWARE NAME
 OPTIONS:
 
     a) List all sessions of a User through the ID.
-    b) List all logins.
+    b) List all logins in a specific time.
     c) Total time of session of a user.
     d) Check MAC from a User.
     e) List all of the differents MAC of a User.

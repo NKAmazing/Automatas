@@ -20,6 +20,7 @@ def main():
         elif inp == 'd':
             ft.return_menu()
         elif inp == 'e':
+            user.list_macs_user()
             ft.return_menu()
         elif inp == 'f':
             ft.return_menu()
