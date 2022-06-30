@@ -19,6 +19,8 @@ PATH_XLSX = "Usuarios WiFi.xlsx"
 FULLPATH_XLSX = r"C:\Users\Nicolas\Proyectos Programacion\Automatas\TP_FINAL\Usuarios WiFi.xlsx"
 PATH_XLSX_USER = "Usuarios.xlsx"
 PATH_XLSX_MACS = "MACs de Usuario.xlsx"
+#esta la agrega el negro
+PATH_DATE_USR = "Conexiones de usuario.xlsx"
 
 # inputs
 QUESTION_RET = "Do yo want to return to Main Menu? (Y/N) "
@@ -35,6 +37,9 @@ COUNTRY = "Enter country: "
 AGE = "Enter Age: "
 QUESTION_SL = "What list do you want to see? bk/cl : "
 UN_INP = "Enter Username: "
+#desde acá agrega el negro
+DATETIME_INPUT = "Enter the date time with this format DD/MM/YYYY "
+DATETIME_RANGE_INPUT = "Do you want to use a range to search? Y/N"
 
 # errores o emptys
 ERR = "UNEXPECTED ERROR"

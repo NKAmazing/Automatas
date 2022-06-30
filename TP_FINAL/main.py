@@ -13,7 +13,8 @@ def main():
             user.list_session_id()
             ft.return_menu()
         elif inp == 'b':
-            user.print_csv()
+            #esto lo agrega el negro
+            user.datetime_search()
             ft.return_menu()
         elif inp == 'c':
             ft.return_menu()
