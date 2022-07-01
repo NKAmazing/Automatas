@@ -9,30 +9,31 @@ def main():
         print(cs.MENU)
         inp = input("")
         inp = inp.lower()
-        if inp == 'a':
+        if inp == '1':
             user.list_session_id()
             ft.return_menu()
-        elif inp == 'b':
+        elif inp == '2':
             user.datetime_search()
             ft.return_menu()
-        elif inp == 'c':
+        elif inp == '3':
+            user.total_session_time()
             ft.return_menu()
-        elif inp == 'd':
+        elif inp == '4':
             user.mac_user_devices()
             ft.return_menu()
-        elif inp == 'e':
+        elif inp == '5':
             user.list_macs_user()
             ft.return_menu()
-        elif inp == 'f':
+        elif inp == '6':
             ft.return_menu()
-        elif inp == 'g':
+        elif inp == '7':
             user.traffic_user()
             ft.return_menu()
         elif inp == 'h':
             ft.help_function()
             time.sleep(1)
             ft.return_menu()
-        elif inp == 'i':
+        elif inp == '8':
             ft.return_menu()
         elif inp == 'q':
             ft.exit_program()

@@ -2,7 +2,7 @@ import re
 import const as cs
 import time
 import pandas as pd
-from datetime import datetime
+import datetime
 
 class User:
 
@@ -21,10 +21,10 @@ class User:
             # separa estas dos columnas con loc
             df_loc = df.loc[:,["ID Conexion unico", "Usuario"]]
             # busca un usuario en esa columna y lo separa con loc
-            usuarios = df_loc[df_loc["Usuario"].str.contains(inp)]
+            user_df = df_loc[df_loc["Usuario"].str.contains(inp)]
             print(cs.JUMP_LINE)
-            print(usuarios)
-            usuarios.to_excel(cs.PATH_XLSX_USER) # guarda los datos en un excel
+            print(user_df)
+            user_df.to_excel(cs.PATH_XLSX_USER) # guarda los datos en un excel
         else:
             print(cs.USER_NOT_FOUND)
         time.sleep(0.5)
@@ -41,10 +41,10 @@ class User:
         df = self.operate_xlsx_file()
         if inp in df.values:
             df_loc = df.loc[:,["MAC Cliente", "Usuario"]]
-            usuarios = df_loc[df_loc["Usuario"].str.contains(inp)]
+            user_df = df_loc[df_loc["Usuario"].str.contains(inp)]
             print(cs.JUMP_LINE)
-            print(usuarios)
-            usuarios.to_excel(cs.PATH_XLSX_MACS)
+            print(user_df)
+            user_df.to_excel(cs.PATH_XLSX_MACS)
         else:
             print(cs.USER_NOT_FOUND)
         time.sleep(0.5)
@@ -107,6 +107,25 @@ class User:
             print(cs.JUMP_LINE, cs.WRONG_DT)
         time.sleep(0.5)
         
+    def total_session_time(self):
+        print(cs.JUMP_LINE)
+        inp = input(cs.UN_INP) # ingresa el usuario
+        print(cs.JUMP_LINE)
+        print(cs.SEARCHING_DATA)
+        df = self.operate_xlsx_file() # llama a la funcion
+        if inp in df.values:
+            # separa estas dos columnas con loc
+            df_loc = df.loc[:,["Usuario", "Session Time"]]
+            # busca un usuario en esa columna y lo separa con loc
+            user_df = df_loc[df_loc["Usuario"].str.contains(inp)]
+            total_time_df = user_df['Session Time'].sum()
+            print(cs.JUMP_LINE)
+            total_time = str(datetime.timedelta(seconds=total_time_df))
+            print("The total session time of this user is:", total_time)
+        else:
+            print(cs.JUMP_LINE, cs.USER_NOT_FOUND)
+        time.sleep(0.5)
+
 
     def traffic_user(self):
         print(cs.JUMP_LINE)
@@ -118,10 +137,10 @@ class User:
             # separa estas tres columnas con loc
             df_loc = df.loc[:,["Usuario", "Input Octects", "Output Octects"]]
             # busca un usuario en esa columna y lo separa con loc
-            usuarios = df_loc[df_loc["Usuario"].str.contains(inp)]
+            user_df = df_loc[df_loc["Usuario"].str.contains(inp)]
             print(cs.JUMP_LINE)
-            print(usuarios)
-            usuarios.to_excel(cs.PATH_TRAFFIC_USR) # guarda los datos en un excel
+            print(user_df)
+            user_df.to_excel(cs.PATH_TRAFFIC_USR) # guarda los datos en un excel
         else:
             print(cs.USER_NOT_FOUND)
         time.sleep(0.5)

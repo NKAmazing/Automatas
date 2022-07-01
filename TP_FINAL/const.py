@@ -67,14 +67,14 @@ CONNECTION REPORTING SOFTWARE SERVICE
 
 OPTIONS:
 
-    a) List all sessions of a User through the ID.
-    b) List all logins in a specific time.
-    c) Total time of session of a user.
-    d) Check MAC from a User.
-    e) List all of the differents MAC of a User.
-    f) List all Users connected to an AP.
-    g) Show traffic of a User.
-    i) List APs sorted by total traffic
+    1) List all sessions of a User through the ID.
+    2) List all logins in a specific time.
+    3) Total time of session of a user.
+    4) Check MAC from a User.
+    5) List all of the differents MAC of a User.
+    6) List all Users connected to an AP.
+    7) Show traffic of a User.
+    8) List APs sorted by total traffic
 
     h) Help.
 
