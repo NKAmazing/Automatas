@@ -144,3 +144,40 @@ class User:
         else:
             print(cs.USER_NOT_FOUND)
         time.sleep(0.5)
+    
+    def mac_ap(self):
+        print(cs.JUMP_LINE)
+        # regex datetime
+        regex = re.compile(cs.DATETIME_REGEX)
+        print(cs.DT_RANGE_MSG)
+        time.sleep(2)
+        print(cs.JUMP_LINE)
+        date_1 = str(input(cs.DATETIME_INPUT_1)) # ingreso primera fecha
+        validation_date = regex.fullmatch(date_1) # valido con fullmatch
+        print(cs.JUMP_LINE)
+        print(cs.VALIDATE_CHECKING)
+        time.sleep(2)
+        if validation_date: # validacion correcta
+            print(cs.JUMP_LINE, cs.VALIDATE_CORRECT, cs.JUMP_LINE)
+            date_2 = str(input(cs.DATETIME_INPUT_2)) # ingreso segunda fecha
+            validation_date_2 = regex.fullmatch(date_2) # valido con fullmatch
+            print(cs.JUMP_LINE)
+            print(cs.VALIDATE_CHECKING)
+            time.sleep(2)
+            if validation_date_2: # segunda validacion correcta
+                print(cs.JUMP_LINE, cs.VALIDATE_CORRECT, cs.JUMP_LINE)
+                mac_ap_input = str(input(cs.AP_INPUT))
+                print(cs.JUMP_LINE,cs.SEARCHING_DATA)
+                df = self.operate_xlsx_file()
+                if mac_ap_input in df.values and date_1 < date_2:
+                    df_loc = df.loc[:,["MAC AP", "Usuario", "Inicio de Conexi¢n", "Fin de Conexio"]]
+                    df_mac_fecha = df_loc[(df_loc["MAC AP"].isin([mac_ap_input])) & (df_loc["Inicio de Conexi¢n"].between(date_1, date_2))]
+                    print(df_mac_fecha)
+                    df_mac_fecha.to_excel(cs.PATH_MAC_DT)
+                else:
+                    print(cs.JUMP_LINE, cs.NO_MATCH)
+            else:
+                print(cs.JUMP_LINE, cs.WRONG_DT_2)
+        else:
+            print(cs.JUMP_LINE, cs.WRONG_DT)
+        time.sleep(0.5)

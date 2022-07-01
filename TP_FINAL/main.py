@@ -25,6 +25,7 @@ def main():
             user.list_macs_user()
             ft.return_menu()
         elif inp == '6':
+            user.mac_ap()
             ft.return_menu()
         elif inp == '7':
             user.traffic_user()
