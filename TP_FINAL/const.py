@@ -1,5 +1,8 @@
 # Constants
 
+# REGEX
+DATETIME_REGEX = ('''(0[1-9]|[12]\d|3[01])\/([1-9]|1[0-2])\/[12]\d{3}  ([01][0-9]|2[0-3]):[0-5]\d:[0-5]\d''')
+
 # paths
 PATH = "E:\\Proyectos python\\Computacion 1 FINAL\\FINAL 16-05-22\\N_Ejercicio\\libros.txt"
 PATH_1 = "E:\\Proyectos python\\Computacion 1 FINAL\\FINAL 16-05-22\\N_Ejercicio\\ejemplo_2.txt"
@@ -38,7 +41,9 @@ COUNTRY = "Enter country: "
 AGE = "Enter Age: "
 QUESTION_SL = "What list do you want to see? bk/cl : "
 UN_INP = "Enter Username: "
-DATETIME_INPUT = "Enter the date time with this format DD/MM/YYYY "
+DATETIME_INPUT = "Enter the date time with this format (DD/MM/YYYY): "
+DATETIME_INPUT_1 = "Enter the first date time with this format (DD/MM/YYYY) : "
+DATETIME_INPUT_2 = "Enter the second date time with this format (DD/MM/YYYY) : "
 DATETIME_RANGE_INPUT = "Do you want to use a range to search? (Y/N) "
 MAC_USER_INP = "Enter MAC of the User to analyze: "
 
@@ -54,6 +59,7 @@ EMPTY_CL = "This list is empty. No client to add."
 OUT_RANGE = "The object you selected is not in the list."
 WRONG_LIST = "ERROR. The option you selected is not a list."
 EMPTY_DICT = "This assigned book list is empty."
+NO_MATCH = "There's no match for the data you are searching."
 
 # menu
 MENU = '''
@@ -106,6 +112,7 @@ CLIENT_ATTENDED = "All clients was successfully attended."
 USER_NOT_FOUND = "The user was not found."
 MAC_NOT_FOUND = "The MAC was not found."
 WRONG_DT = "The value you entered is not in the format datetime."
+WRONG_DT_2 = "The second value you entered is not in the format datetime."
 INSC_FALSE = "You cannot inscribed to this assignature."
 INSC_TRUE = "You have successfully inscribed to the assignature."
 NOT_INT_DNI = "Need to be a int digit!"
@@ -117,6 +124,9 @@ CHOOSE_CLIENT = "Choose a Client from client list: "
 BK_ASSIGNED = "The book was assigned to a client."
 INP_FB = "You have chosen option: "
 INFO_HELP = "To test how it works."
+VALIDATE_CHECKING = "Validating data..."
+VALIDATE_CORRECT = "The data was validated successfully!"
+DT_RANGE_MSG = "You need to set a Datetime range below."
 
 # operaciones de string
 JUMP_LINE = "\n"

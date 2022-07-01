@@ -70,34 +70,43 @@ class User:
     # desde acá estoy agregando cosas
     def datetime_search(self):
         print(cs.JUMP_LINE)
-        regex = re.compile('''(0[1-9]|[12]\d|3[01])-([1-9]|1[0-2])-[12]\d{3} ([01][0-9]|2[0-3]):[0-5]\d:[0-5]\d''')
-        inp = str(input(cs.DATETIME_INPUT))
-        validation = regex.fullmatch(inp)
-
-        if validation:
-            usr_input = input(cs.UN_INP)
-            opt_input = str(input(cs.DATETIME_RANGE_INPUT))
-            if opt_input.isupper():
-                opt_input = opt_input.lower()
-            df = self.operate_xlsx_file()
-            df_loc = df.loc[:, ["Inicio de Conexi¢n", "Fin de Conexio", "Usuario"]]
-            # fecha_1 = datetime.strptime(inp, '%d/%m/%Y')
-            # fecha_1 = fecha_1.strftime("%d-%m-%Y")
-            # print(type(fecha_1))
-            if opt_input == "y":
-                inp_2 = input(cs.DATETIME_INPUT)
-                fecha_2 = datetime.strptime(inp_2, '%d/%m/%Y')
-            else:
-                print(cs.SEARCHING_DATA)
-                usr_df = df_loc[df_loc["Usuario"].str.contains(usr_input)]
-                date_usr = usr_df.loc[df["Inicio de Conexi¢n"].astype(str).isin([inp])]
-                print(cs.JUMP_LINE)
-                print(date_usr)
-                date_usr.to_excel(cs.PATH_DATE_USR)
-        else:
+        # regex datetime
+        regex = re.compile(cs.DATETIME_REGEX)
+        print(cs.DT_RANGE_MSG)
+        time.sleep(2)
+        print(cs.JUMP_LINE)
+        date_1 = str(input(cs.DATETIME_INPUT_1)) # ingreso primera fecha
+        validation_date = regex.fullmatch(date_1) # valido con fullmatch
+        print(cs.JUMP_LINE)
+        print(cs.VALIDATE_CHECKING)
+        time.sleep(2)
+        if validation_date: # validacion correcta
+            print(cs.JUMP_LINE, cs.VALIDATE_CORRECT, cs.JUMP_LINE)
+            date_2 = str(input(cs.DATETIME_INPUT_2)) # ingreso segunda fecha
+            validation_date_2 = regex.fullmatch(date_2) # valido con fullmatch
             print(cs.JUMP_LINE)
-            print(cs.WRONG_DT)
+            print(cs.VALIDATE_CHECKING)
+            time.sleep(2)
+            if validation_date_2: # segunda validacion correcta
+                print(cs.JUMP_LINE, cs.VALIDATE_CORRECT, cs.JUMP_LINE)
+                usr_input = input(cs.UN_INP) # ingreso usuario
+                print(cs.JUMP_LINE, cs.SEARCHING_DATA)
+                df = self.operate_xlsx_file() # llamo a la funcion para leer el archivo
+                if usr_input in df.values and date_1 < date_2: # verifico si existe el usuario y si el rango de fechas es correcto
+                    df_loc = df.loc[: , ["Usuario","Inicio de Conexi¢n"]] # separo estas dos columnas con loc
+                    usr_df = df_loc[df_loc["Usuario"].isin([usr_input])] # busco mi usuario ingresado
+                    date_df = usr_df.loc[df["Inicio de Conexi¢n"].between(date_1, date_2)] # busco entre mi rango de fechas
+                    print(cs.JUMP_LINE)
+                    print(date_df)
+                    date_df.to_excel(cs.PATH_DATE_USR)
+                else: # no match
+                    print(cs.JUMP_LINE, cs.NO_MATCH)
+            else:
+                print(cs.JUMP_LINE, cs.WRONG_DT_2)
+        else:
+            print(cs.JUMP_LINE, cs.WRONG_DT)
         time.sleep(0.5)
+        
 
     def traffic_user(self):
         print(cs.JUMP_LINE)
