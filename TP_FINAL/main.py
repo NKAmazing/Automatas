@@ -13,7 +13,6 @@ def main():
             user.list_session_id()
             ft.return_menu()
         elif inp == 'b':
-            #esto lo agrega el negro
             user.datetime_search()
             ft.return_menu()
         elif inp == 'c':
@@ -26,6 +25,7 @@ def main():
         elif inp == 'f':
             ft.return_menu()
         elif inp == 'g':
+            user.traffic_user()
             ft.return_menu()
         elif inp == 'h':
             ft.help_function()
