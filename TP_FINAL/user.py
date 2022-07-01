@@ -49,6 +49,24 @@ class User:
             print(cs.USER_NOT_FOUND)
         time.sleep(0.5)
 
+    def mac_user_devices(self):
+        print(cs.JUMP_LINE)
+        inp = input(cs.MAC_USER_INP)
+        print(cs.JUMP_LINE)
+        print(cs.SEARCHING_DATA)
+        df = self.operate_xlsx_file()
+        if inp in df.values:
+            df_loc = df.loc[:,["MAC Cliente", "Usuario"]]
+            macs = df_loc[df_loc["MAC Cliente"].isin([inp])]
+            mac_user = macs.groupby(['MAC Cliente', 'Usuario']).size().reset_index(name='Cantidad de Veces Utilizada')
+            print(cs.JUMP_LINE)
+            print(mac_user)
+            mac_user.to_excel(cs.PATH_MAC_USER)
+        else:
+            print(cs.JUMP_LINE)
+            print(cs.MAC_NOT_FOUND)
+        time.sleep(0.5)
+
     # desde acá estoy agregando cosas
     def datetime_search(self):
         print(cs.JUMP_LINE)
@@ -77,7 +95,8 @@ class User:
                 print(date_usr)
                 date_usr.to_excel(cs.PATH_DATE_USR)
         else:
-            print(cs.ERR)
+            print(cs.JUMP_LINE)
+            print(cs.WRONG_DT)
         time.sleep(0.5)
 
     def traffic_user(self):

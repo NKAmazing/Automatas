@@ -18,6 +18,7 @@ def main():
         elif inp == 'c':
             ft.return_menu()
         elif inp == 'd':
+            user.mac_user_devices()
             ft.return_menu()
         elif inp == 'e':
             user.list_macs_user()
