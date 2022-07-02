@@ -26,6 +26,7 @@ PATH_DATE_USR = "Conexiones de usuario.xlsx"
 PATH_TRAFFIC_USR = "Trafico de Usuario.xlsx"
 PATH_MAC_USER = "Cantidad de Veces de una MAC.xlsx"
 PATH_MAC_DT = "MAC AP por fecha.xlsx"
+PATH_TOTAL_TRAFFIC = "Trafico total de MAC AP.xlsx"
 
 # inputs
 QUESTION_RET = "Do yo want to return to Main Menu? (Y/N) "
@@ -45,9 +46,9 @@ UN_INP = "Enter Username: "
 DATETIME_INPUT = "Enter the date time with this format (DD/MM/YYYY): "
 DATETIME_INPUT_1 = "Enter the first date time with this format (DD/MM/YYYY) : "
 DATETIME_INPUT_2 = "Enter the second date time with this format (DD/MM/YYYY) : "
-DATETIME_RANGE_INPUT = "Do you want to use a range to search? (Y/N) "
+DATETIME_RANGE_INPUT = "Do you want to use a datetime range to search? (Y/N) "
 MAC_USER_INP = "Enter MAC of the User to analyze: "
-AP_INPUT = "Enter an MAC AP to search for."
+AP_INPUT = "Enter an MAC AP to search for: "
 
 # errores o emptys
 ERR = "UNEXPECTED ERROR"

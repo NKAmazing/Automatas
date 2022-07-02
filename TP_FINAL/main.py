@@ -35,6 +35,7 @@ def main():
             time.sleep(1)
             ft.return_menu()
         elif inp == '8':
+            user.total_traffic()
             ft.return_menu()
         elif inp == 'q':
             ft.exit_program()
