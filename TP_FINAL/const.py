@@ -130,6 +130,8 @@ INFO_HELP = "To test how it works."
 VALIDATE_CHECKING = "Validating data..."
 VALIDATE_CORRECT = "The data was validated successfully!"
 DT_RANGE_MSG = "You need to set a Datetime range below."
+TO_EXCEL = "To see the details, check the excel that has been created."
+CHECK_XLSX = "For more details, check the excel file 'Usuarios WiFi'."
 
 
 # operaciones de string

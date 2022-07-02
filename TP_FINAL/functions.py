@@ -22,6 +22,9 @@ def help_function():
         time.sleep(0.5)
         print(const.JUMP_LINE)
         print(const.LOAD_DATA)
+        time.sleep(0.5)
+        print(const.JUMP_LINE, const.CHECK_XLSX)
+        time.sleep(0.5)
     elif inp == 'n':
         time.sleep(0.5)
     else:

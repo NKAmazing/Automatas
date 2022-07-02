@@ -26,8 +26,9 @@ class User:
             print(cs.JUMP_LINE)
             print(user_df)
             user_df.to_excel(cs.PATH_XLSX_USER) # guarda los datos en un excel
+            print(cs.JUMP_LINE, cs.TO_EXCEL)
         else:
-            print(cs.USER_NOT_FOUND)
+            print(cs.JUMP_LINE, cs.USER_NOT_FOUND)
         time.sleep(0.5)
 
     def print_xlsx(self):
@@ -46,8 +47,9 @@ class User:
             print(cs.JUMP_LINE)
             print(user_df)
             user_df.to_excel(cs.PATH_XLSX_MACS)
+            print(cs.JUMP_LINE, cs.TO_EXCEL)
         else:
-            print(cs.USER_NOT_FOUND)
+            print(cs.JUMP_LINE, cs.USER_NOT_FOUND)
         time.sleep(0.5)
 
     def mac_user_devices(self):
@@ -63,12 +65,12 @@ class User:
             print(cs.JUMP_LINE)
             print(mac_user)
             mac_user.to_excel(cs.PATH_MAC_USER)
+            print(cs.JUMP_LINE, cs.TO_EXCEL)
         else:
             print(cs.JUMP_LINE)
             print(cs.MAC_NOT_FOUND)
         time.sleep(0.5)
 
-    # desde acá estoy agregando cosas
     def datetime_search(self):
         print(cs.JUMP_LINE)
         # regex datetime
@@ -100,6 +102,7 @@ class User:
                     print(cs.JUMP_LINE)
                     print(date_df)
                     date_df.to_excel(cs.PATH_DATE_USR)
+                    print(cs.JUMP_LINE, cs.TO_EXCEL)
                 else: # no match
                     print(cs.JUMP_LINE, cs.NO_MATCH)
             else:
@@ -141,8 +144,9 @@ class User:
             print(cs.JUMP_LINE)
             print(user_df)
             user_df.to_excel(cs.PATH_TRAFFIC_USR) # guarda los datos en un excel
+            print(cs.JUMP_LINE, cs.TO_EXCEL)
         else:
-            print(cs.USER_NOT_FOUND)
+            print(cs.JUMP_LINE, cs.USER_NOT_FOUND)
         time.sleep(0.5)
     
     def mac_ap(self):
@@ -171,13 +175,14 @@ class User:
                 if validation_date_2: # segunda validacion correcta
                     print(cs.JUMP_LINE, cs.VALIDATE_CORRECT, cs.JUMP_LINE)
                     mac_ap_input = str(input(cs.AP_INPUT))
-                    print(cs.JUMP_LINE,cs.SEARCHING_DATA)
+                    print(cs.JUMP_LINE,cs.SEARCHING_DATA, cs.JUMP_LINE)
                     df = self.operate_xlsx_file()
                     if mac_ap_input in df.values and date_1 < date_2:
                         df_loc = df.loc[:,["MAC AP", "Usuario", "Inicio de Conexi¢n", "Fin de Conexio"]]
                         df_mac_date = df_loc[(df_loc["MAC AP"].isin([mac_ap_input])) & (df_loc["Inicio de Conexi¢n"].between(date_1, date_2))]
                         print(df_mac_date)
                         df_mac_date.to_excel(cs.PATH_MAC_DT)
+                        print(cs.JUMP_LINE, cs.TO_EXCEL)
                     else:
                         print(cs.JUMP_LINE, cs.NO_MATCH)
                 else:
@@ -199,18 +204,18 @@ class User:
                 date_1 = inp[0] + inp[2] + inp[1]
                 date_2 = inp[0] + inp[2] + inp[3]
                 mac_ap_input = str(input(cs.AP_INPUT))
-                print(cs.JUMP_LINE,cs.SEARCHING_DATA)
+                print(cs.JUMP_LINE,cs.SEARCHING_DATA, cs.JUMP_LINE)
                 df = self.operate_xlsx_file()
                 if mac_ap_input in df.values and date_1 < date_2:
                     df_loc = df.loc[:,["MAC AP", "Usuario", "Inicio de Conexi¢n", "Fin de Conexio"]]
                     df_mac_date = df_loc[(df_loc["MAC AP"].isin([mac_ap_input])) & (df_loc["Inicio de Conexi¢n"].between(date_1, date_2))]
                     print(df_mac_date)
                     df_mac_date.to_excel(cs.PATH_MAC_DT)
+                    print(cs.JUMP_LINE, cs.TO_EXCEL)
                 else:
                     print(cs.JUMP_LINE, cs.NO_MATCH)
             else:
                 print(cs.JUMP_LINE, cs.WRONG_DT)
-
         time.sleep(0.5)
 
     def total_traffic(self):
@@ -222,3 +227,5 @@ class User:
         sorted_values = values_mac.sort_values(by = ['Input Octects', 'Output Octects'],ascending = False)
         print(sorted_values)
         sorted_values.to_excel(cs.PATH_TOTAL_TRAFFIC)
+        print(cs.JUMP_LINE, cs.TO_EXCEL)
+        time.sleep(0.5)
