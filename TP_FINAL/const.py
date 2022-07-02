@@ -48,7 +48,7 @@ DATETIME_INPUT_1 = "Enter the first date time with this format (DD/MM/YYYY) : "
 DATETIME_INPUT_2 = "Enter the second date time with this format (DD/MM/YYYY) : "
 DATETIME_RANGE_INPUT = "Do you want to use a datetime range to search? (Y/N) "
 MAC_USER_INP = "Enter MAC of the User to analyze: "
-AP_INPUT = "Enter an MAC AP to search for: "
+AP_INPUT = "Enter a MAC AP to search for: "
 
 # errores o emptys
 ERR = "UNEXPECTED ERROR"
